@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: int_system1__sales_joined
+    description: "System 1 sales enriched with order metadata (referral code, device type)."
+    columns:
+      - name: order_id
+        description: "Primary key."
+        data_tests:
+          - unique
+          - not_null
+      - name: customer_id
+        data_tests:
+          - not_null
+      - name: order_date
+        data_tests:
+          - not_null
+      - name: amount
+        data_tests:
+          - not_null

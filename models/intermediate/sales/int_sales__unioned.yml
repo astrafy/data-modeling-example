@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: int_sales__unioned
+    description: "All sales from system 1 and system 2 unioned into a single model with a source_system tag."
+    columns:
+      - name: order_id
+        description: "Primary key — unique across both systems."
+        data_tests:
+          - unique
+          - not_null
+      - name: customer_id
+        data_tests:
+          - not_null
+      - name: order_date
+        data_tests:
+          - not_null
+      - name: amount
+        data_tests:
+          - not_null
+      - name: source_system
+        description: "Which source system the record originated from."
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: [system1, system2]

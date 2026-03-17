@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: mart_customer_spend
+    description: "Wide customer mart — one row per customer with lifetime spend metrics."
+    columns:
+      - name: customer_id
+        description: "Primary key."
+        data_tests:
+          - unique
+          - not_null
+      - name: customer_name
+        data_tests:
+          - not_null
+      - name: signup_date
+        data_tests:
+          - not_null

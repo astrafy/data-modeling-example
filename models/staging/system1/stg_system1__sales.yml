@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: stg_system1__sales
+    description: "Staged sales orders from system 1."
+    columns:
+      - name: order_id
+        description: "Primary key — unique order identifier."
+        data_tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: "Foreign key to the customer."
+        data_tests:
+          - not_null
+      - name: order_date
+        description: "Date the order was placed."
+        data_tests:
+          - not_null
+      - name: amount
+        description: "Total order amount."
+        data_tests:
+          - not_null

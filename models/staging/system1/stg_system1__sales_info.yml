@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: stg_system1__sales_info
+    description: "Supplementary order metadata from system 1 (referral, device)."
+    columns:
+      - name: order_id
+        description: "Primary key — matches system 1 sales order id."
+        data_tests:
+          - unique
+          - not_null
+      - name: referral_code
+        description: "Optional referral code; may be null."
+      - name: device_type
+        description: "Device used to place the order."
+        data_tests:
+          - accepted_values:
+              values: [mobile, desktop, tablet]

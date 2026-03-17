@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: agg_daily_sales
+    description: "Daily sales aggregates by source system."
+    columns:
+      - name: order_date
+        data_tests:
+          - not_null
+      - name: source_system
+        data_tests:
+          - not_null
+      - name: order_count
+        data_tests:
+          - not_null
+      - name: total_revenue
+        data_tests:
+          - not_null
+      - name: avg_order_value
+        data_tests:
+          - not_null

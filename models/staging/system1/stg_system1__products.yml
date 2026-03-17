@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: stg_system1__products
+    description: "Staged product catalogue from system 1."
+    columns:
+      - name: product_id
+        description: "Primary key — unique product identifier."
+        data_tests:
+          - unique
+          - not_null
+      - name: product_name
+        description: "Name of the product."
+        data_tests:
+          - not_null
+      - name: category
+        description: "Product category."
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: [Electronics, Sports, Kitchen, Home, Health, Stationery]
+      - name: unit_price
+        description: "Unit price of the product."
+        data_tests:
+          - not_null

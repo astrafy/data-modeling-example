@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: stg_system1__order_items
+    description: "Staged order line items from system 1."
+    columns:
+      - name: order_item_id
+        description: "Primary key — unique order item identifier."
+        data_tests:
+          - unique
+          - not_null
+      - name: order_id
+        description: "Foreign key to the order."
+        data_tests:
+          - not_null
+      - name: product_id
+        description: "Foreign key to the product."
+        data_tests:
+          - not_null
+      - name: quantity
+        description: "Number of units ordered."
+        data_tests:
+          - not_null
+      - name: line_total
+        description: "Total price for this line item."
+        data_tests:
+          - not_null

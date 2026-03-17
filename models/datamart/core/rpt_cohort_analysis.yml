@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: rpt_cohort_analysis
+    description: "Cohort analysis — revenue and activity grouped by customer signup month and order month."
+    columns:
+      - name: cohort_month
+        description: "Month the cohort of customers signed up."
+        data_tests:
+          - not_null
+      - name: order_month
+        description: "Month in which orders were placed."
+        data_tests:
+          - not_null
+      - name: active_customers
+        data_tests:
+          - not_null
+      - name: total_orders
+        data_tests:
+          - not_null
+      - name: total_revenue
+        data_tests:
+          - not_null

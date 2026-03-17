@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: stg_crm__customers
+    description: "Staged customer records from the CRM."
+    columns:
+      - name: customer_id
+        description: "Primary key — unique customer identifier."
+        data_tests:
+          - unique
+          - not_null
+      - name: customer_name
+        description: "Full name of the customer."
+        data_tests:
+          - not_null
+      - name: signup_date
+        description: "Date the customer signed up."
+        data_tests:
+          - not_null

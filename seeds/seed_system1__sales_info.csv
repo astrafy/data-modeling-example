@@ -1,0 +1,11 @@
+id,referral_code,device_type
+1,REF001,mobile
+2,REF002,desktop
+3,,mobile
+4,REF001,tablet
+5,REF003,desktop
+6,,mobile
+7,REF004,desktop
+8,REF002,mobile
+9,,tablet
+10,REF005,desktop

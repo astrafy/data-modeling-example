@@ -1,0 +1,7 @@
+data_modeling_example:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "target/data_modeling_example.duckdb"
+      threads: 4

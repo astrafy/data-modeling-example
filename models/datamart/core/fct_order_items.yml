@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: fct_order_items
+    description: "Order line-item fact table — one row per product per order."
+    columns:
+      - name: order_item_id
+        description: "Primary key."
+        data_tests:
+          - unique
+          - not_null
+      - name: order_id
+        data_tests:
+          - not_null
+      - name: customer_id
+        description: "Foreign key to dim_customers."
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('dim_customers')
+              field: customer_id
+      - name: product_id
+        description: "Foreign key to dim_products."
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('dim_products')
+              field: product_id
+      - name: quantity
+        data_tests:
+          - not_null
+      - name: line_total
+        data_tests:
+          - not_null
+      - name: order_date
+        data_tests:
+          - not_null

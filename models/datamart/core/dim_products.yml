@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: dim_products
+    description: "Product dimension — one row per product."
+    columns:
+      - name: product_id
+        description: "Primary key."
+        data_tests:
+          - unique
+          - not_null
+      - name: product_name
+        data_tests:
+          - not_null
+      - name: category
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: [Electronics, Sports, Kitchen, Home, Health, Stationery]
+      - name: unit_price
+        data_tests:
+          - not_null

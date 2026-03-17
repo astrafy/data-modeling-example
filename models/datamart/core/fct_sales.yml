@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: fct_sales
+    description: "Sales fact table at order grain, combining system 1 and system 2."
+    columns:
+      - name: sales_key
+        description: "Surrogate primary key."
+        data_tests:
+          - unique
+          - not_null
+      - name: order_id
+        data_tests:
+          - not_null
+      - name: customer_id
+        description: "Foreign key to dim_customers."
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('dim_customers')
+              field: customer_id
+      - name: order_date
+        data_tests:
+          - not_null
+      - name: amount
+        data_tests:
+          - not_null
+      - name: source_system
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: [system1, system2]

@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: util_date_spine
+    description: "Date dimension spanning 2024, with year/month/quarter/weekend fields."
+    columns:
+      - name: date_day
+        description: "Primary key — one row per calendar day."
+        data_tests:
+          - unique
+          - not_null
+      - name: year_number
+        data_tests:
+          - not_null
+      - name: month_number
+        data_tests:
+          - not_null
+      - name: quarter_number
+        data_tests:
+          - not_null
+      - name: is_weekend
+        data_tests:
+          - not_null
